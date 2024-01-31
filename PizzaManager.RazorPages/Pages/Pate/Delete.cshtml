@@ -1,0 +1,26 @@
+﻿@page "{id:int}"
+@model PizzaManager.RazorPages.Pages.Pate.DeleteModel
+@{
+}
+
+<h1>Supprimer la pâte</h1>
+
+<h3>Voulez-vous vraiment supprimer cette pâte ?</h3>
+<div>
+    <h4>Pâte</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Nom</label>
+        </dt>
+        <dd>
+            <label asp-for="Pate.Nom"></label>
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="submit" value="Supprimer" class="btn btn-default" /> |
+        <a asp-page="./Index">Retour à la liste</a>
+    </form>
+</div>
+

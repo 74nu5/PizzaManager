@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+}
+<h1>Ingrédients</h1>
+<a asp-page="Create">Créer</a>
+<table>
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Calories</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var ingredient in this.Model.Ingredients)
+    {
+        <tr>
+            <td>@ingredient.Nom</td>
+            <td>@ingredient.NCal</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@ingredient.Id">Edit</a> |
+                <a asp-page="Details" asp-route-id="@ingredient.Id">Details</a> |
+                <a asp-page="Delete" asp-route-id="@ingredient.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+
+</table>

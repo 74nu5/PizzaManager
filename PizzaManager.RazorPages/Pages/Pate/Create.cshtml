@@ -1,0 +1,18 @@
+﻿@page
+@model PizzaManager.RazorPages.Pages.Pate.CreateModel
+@{
+}
+
+<h1>Création d'une pate.</h1>
+
+<h4>Pate</h4>
+<hr />
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Pate.Nom"></label>
+        <input asp-for="Pate.Nom" class="form-control" />
+        <span asp-validation-for="Pate.Nom" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Créer</button>
+</form>

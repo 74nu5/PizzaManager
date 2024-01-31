@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    this.ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <!-- Trois div pour accéder aux pizzas , ingrédients et pates -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Pizzas</h2>
+            <p>
+                <a class="btn btn-primary" asp-page="/Pizza/Index">Voir les pizzas</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Ingrédients</h2>
+            <p>
+                <a class="btn btn-primary" asp-page="/Ingredient/Index">Voir les ingrédients</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Pâtes</h2>
+            <p>
+                <a class="btn btn-primary" asp-page="/Pate/Index">Voir les pâtes</a>
+            </p>
+        </div>
+    </div>
+</div>

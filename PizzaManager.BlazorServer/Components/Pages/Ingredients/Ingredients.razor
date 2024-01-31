@@ -1,0 +1,37 @@
+﻿@page "/ingredients"
+
+<h3>Ingrédients</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>NCal</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="height: 50px;">
+        <td>
+            <input @bind="this.newIngredient.Nom"/>
+        </td>
+        <td>
+            <input @bind="this.newIngredient.NCal"/>
+        </td>
+        <td>
+            <button @onclick="this.AjouterIngredient">Ajouter</button>
+        </td>
+    </tr>
+    @foreach (var ingredient in this.ListeIngredients)
+    {
+        <tr>
+            <td>@ingredient.Nom</td>
+            <td>@ingredient.NCal</td>
+            <td>
+                <button @onclick="() => this.SupprimerIngredient(ingredient.Id)">Supprimer</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+

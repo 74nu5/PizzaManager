@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+<h1>Pizzas</h1>
+<a asp-page="Create">Créer</a>
+<table>
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Pate</th>
+        <th>Ingrédients</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var pizza in this.Model.Pizzas)
+    {
+        <tr>
+            <td>@pizza.Nom</td>
+            <td>@pizza.Pate.Nom</td>
+            <td>@(string.Join(", ", pizza.Ingredients.Select(i => i.Nom)))</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@pizza.Id">Edit</a> |
+                <a asp-page="Details" asp-route-id="@pizza.Id">Details</a> |
+                <a asp-page="Delete" asp-route-id="@pizza.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

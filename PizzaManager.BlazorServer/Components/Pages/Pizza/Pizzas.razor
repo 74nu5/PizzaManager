@@ -1,0 +1,53 @@
+﻿@page "/pizzas"
+
+<h3>Pizzas</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Pate</th>
+        <th>Ingredients</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="height: 50px;">
+        <td>
+            <input @bind="this.newPizza.Nom"/>
+        </td>        
+        <td>
+            <select @bind="this.newPizza.PateId">
+                @foreach (var pate in this.listePates)
+                {
+                    <option value="@pate.Id">@pate.Nom</option>
+                }
+            </select>
+        </td>       
+        <td>
+                <select multiple @bind="this.newPizza.IngredientsIds">
+                @foreach (var ingredient in this.listeIngredients)
+                {
+                    <option value="@ingredient.Id">@ingredient.Nom</option>
+                }
+            </select>
+        </td>
+        <td>
+            <button @onclick="this.AjouterPizza">Ajouter</button>
+        </td>
+    </tr>
+    @foreach (var pizza in this.listePizzas)
+    {
+        <tr>
+            <td>@pizza.Nom</td>
+            <td>@pizza.Pate.Nom</td>
+            <td>@(string.Join(", ", pizza.Ingredients.Select(i => i.Nom)))</td>
+            <td>
+                <button @onclick="() => this.SupprimerPizza(pizza.Id)">Supprimer</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+

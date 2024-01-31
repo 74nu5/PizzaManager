@@ -1,0 +1,22 @@
+﻿@page "{id:int}"
+@model DetailsModel
+@{
+}
+
+<h1>Détails de l'ingrédient</h1>
+<dl>
+
+    <dt>
+        Nom
+    </dt>
+    <dd>
+        @(this.Model.Ingredient.Nom)
+    </dd>
+
+    <dt>
+        Calories
+    </dt>
+    <dd>
+        @(this.Model.Ingredient.NCal)
+    </dd>
+</dl>

@@ -1,0 +1,34 @@
+﻿@page "/pates"
+
+
+<h3>Pates</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr style="height: 50px;">
+        <td>
+            <input @bind="this.newPateNom"/>
+        </td>
+        <td>
+            <button @onclick="this.AjouterPate">Ajouter</button>
+        </td>
+
+    </tr>
+    @foreach (var pate in this.ListePates)
+    {
+        <tr>
+            <td>@pate.Nom</td>
+            <td>
+                <button @onclick="() => this.SupprimerPate(pate.Id)">Supprimer</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

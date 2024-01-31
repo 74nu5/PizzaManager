@@ -1,0 +1,19 @@
+﻿@page "{id:int}"
+@model EditModel
+@{
+}
+
+<h1>Modification d'une pate.</h1>
+
+<h4>Pate</h4>
+
+<hr/>
+
+<form method="post" asp-route-Id="Pate.Id">
+    <div class="form-group">
+        <label asp-for="Pate.Nom"></label>
+        <input asp-for="Pate.Nom" class="form-control"/>
+        <span asp-validation-for="Pate.Nom" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Modifier</button>
+</form>

@@ -1,0 +1,39 @@
+﻿@page
+@model PizzaManager.RazorPages.Pages.Pizza.DeleteModel
+@{
+}
+
+<h1>Supprimer la pizza</h1>
+
+<h3>Êtes-vous sûr de vouloir supprimer cette pizza?</h3>
+
+<div>
+    <h4>Pizza</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Nom</label>
+        </dt>
+        <dd>
+            <label asp-for="Pizza.Nom"></label>
+        </dd>
+        <dt>
+            <label>Pâte</label>
+        </dt>
+        <dd>
+            <label asp-for="Pizza.Pate.Nom"></label>
+        </dd>
+        <dt>
+            <label>Garniture</label>
+        </dt>
+        <dd>
+            @(string.Join(", ", this.Model.Pizza.Ingredients.Select(i => i.Nom)))
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="submit" value="Supprimer" class="btn btn-default" /> |
+        <a asp-page="./Index">Retour à la liste</a>
+    </form>
+</div>
+

@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+<h1>Pâtes</h1>
+<a asp-page="Create">Créer</a>
+<table>
+    <thead>
+    <tr>
+        <th>Nom</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var pate in this.Model.Pates)
+    {
+        <tr>
+            <td>@pate.Nom</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@pate.Id">Edit</a> |
+                <a asp-page="Details" asp-route-id="@pate.Id">Details</a> |
+                <a asp-page="Delete" asp-route-id="@pate.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
