@@ -20,6 +20,13 @@ public sealed class PizzasFrontService
     public async Task DeleteAsync(int id)
         => await this.httpClient.DeleteAsync($"{id}");
 
-    public async Task CreateAsyc(PizzaOutput newPizza)
-        => await this.httpClient.PostAsJsonAsync(string.Empty, newPizza);
+    public async Task<string?> CreateAsyc(PizzaOutput newPizza)
+    {
+        var result = await this.httpClient.PostAsJsonAsync(string.Empty, newPizza);
+
+        if(result.IsSuccessStatusCode)
+            return null;
+
+        return await result.Content.ReadAsStringAsync();
+    }
 }

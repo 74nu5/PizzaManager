@@ -4,8 +4,23 @@ using PizzaManager.Business.Models;
 
 public class PizzaService
 {
-    public void Create(PizzaInput pizza)
+    public (bool success, string errorMessage) Create(PizzaInput pizza)
     {
+        if (pizza.IngredientsIds.Count > 5)
+            return (false, "Une pizza ne peut pas avoir plus de 5 ingrédients");
+
+        var pizzas = this.GetAll();
+
+        // vérification du nom de la pizza
+        if (pizzas.Any(p => p.Nom == pizza.Nom))
+            return (false, "Une pizza avec ce nom existe déjà");
+
+        // vérification des ingrédients de la pizza (si la pizza existe déjà)
+        if (pizzas.Any(pizzaFromDb => pizzaFromDb.Ingredients
+                                                 .Select(p => p.Id)
+                                                 .SequenceEqual(pizza.IngredientsIds)))
+            return (false, "Une pizza avec ces ingrédients existe déjà");
+
         var pate = Data.Pates.Find(p => p.Id == pizza.PateId);
         var ingredients = Data.Ingredients.FindAll(i => pizza.IngredientsIds.Contains(i.Id));
         
@@ -18,6 +33,7 @@ public class PizzaService
         newPizza.Ingredients.AddRange(ingredients);
 
         Data.Pizzas.Add(newPizza);
+        return (true, string.Empty);
     }
 
     public void Delete(int pizzaId)

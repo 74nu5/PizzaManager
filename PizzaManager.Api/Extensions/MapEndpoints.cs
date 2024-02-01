@@ -78,8 +78,12 @@ public static class MapEndpoints
             "/",
             (PizzaInput pizza, [FromServices] PizzaService pizzaService) =>
             {
-                pizzaService.Create(pizza);
-                return Results.Created($"/pizza/{pizza.Id}", pizza);
+                var (success, errorMessage) = pizzaService.Create(pizza);
+                return (success, errorMessage) switch
+                {
+                    (true, _) => Results.Created($"/pizza/{pizza.Id}", pizza),
+                    (_, _) => Results.BadRequest(errorMessage),
+                };
             });
 
         pizzaGroup.MapPut(

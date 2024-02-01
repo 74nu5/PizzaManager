@@ -15,6 +15,10 @@ public partial class Pizzas
 
     private IEnumerable<Ingredient> listeIngredients = [];
 
+    private bool hasError;
+
+    private string errorMessage;
+
     [Inject]
     private PizzasFrontService PizzaService { get; set; } = null!;
 
@@ -33,7 +37,16 @@ public partial class Pizzas
 
     private async Task AjouterPizza()
     {
-        await this.PizzaService.CreateAsyc(this.newPizza);
+        var result = await this.PizzaService.CreateAsyc(this.newPizza);
+        if (result is not null)
+        {
+            this.hasError = true;
+            this.errorMessage = result;
+            return;
+        }
+
+        this.hasError = false;
+        this.errorMessage = string.Empty;
         this.newPizza = new();
         this.listePizzas = await this.PizzaService.GetAllAsync();
     }

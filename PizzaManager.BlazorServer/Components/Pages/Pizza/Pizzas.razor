@@ -2,6 +2,13 @@
 
 <h3>Pizzas</h3>
 
+@if (this.hasError)
+{
+    <p>
+        @this.errorMessage
+    </p>
+}
+
 <table class="table">
     <thead>
     <tr>
@@ -25,7 +32,7 @@
             </select>
         </td>       
         <td>
-                <select multiple @bind="this.newPizza.IngredientsIds">
+            <select multiple @bind="this.newPizza.IngredientsIds">
                 @foreach (var ingredient in this.listeIngredients)
                 {
                     <option value="@ingredient.Id">@ingredient.Nom</option>
