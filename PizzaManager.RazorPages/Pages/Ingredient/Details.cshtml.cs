@@ -12,7 +12,7 @@ public class DetailsModel : PageModel
     public DetailsModel(IngredientService ingredientService)
         => this.ingredientService = ingredientService;
 
-    public Ingredient Ingredient { get; set; } = null!;
+    public IngredientDto Ingredient { get; set; } = null!;
 
     public void OnGet(int id)
         => this.Ingredient = this.ingredientService.Get(id) ?? new() { Nom = "Ingredient inexistant" };

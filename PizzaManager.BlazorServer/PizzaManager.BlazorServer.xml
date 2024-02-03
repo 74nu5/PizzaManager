@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PizzaManager.BlazorServer</name>
+    </assembly>
+    <members>
+        <member name="T:PizzaManager.BlazorServer.Components.Pages.Ingredients.Ingredients">
+            <summary>
+                Represents the ingredients page.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Components.Pages.Ingredients.Ingredients.IngredientService">
+            <summary>
+                Gets the <see cref="T:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Components.Pages.Ingredients.Ingredients.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Components.Pages.Ingredients.EditIngredients.IngredientId">
+            <summary>
+                The ingredient identifier.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Components.Pages.Ingredients.EditIngredients.NavigationManager">
+            <summary>
+               Gets the navigation manager.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Components.Pages.Ingredients.EditIngredients.OnParametersSetAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:PizzaManager.BlazorServer.Components.Pages.Pates.Pates">
+            <summary>
+                Represents the pates page.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Components.Pages.Pates.Pates.PatesFrontService">
+            <summary>
+                Gets the <see cref="P:PizzaManager.BlazorServer.Components.Pages.Pates.Pates.PatesFrontService" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Components.Pages.Pates.Pates.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:PizzaManager.BlazorServer.Components.Pages.Pizza.Pizzas">
+            <summary>
+                Represents the pizzas page.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Components.Pages.Pizza.Pizzas.PizzaService">
+            <summary>
+                Gets the <see cref="T:PizzaManager.BlazorServer.Service.Services.PizzasFrontService" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Components.Pages.Pizza.Pizzas.IngredientService">
+            <summary>
+                Gets the <see cref="T:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Components.Pages.Pizza.Pizzas.PateService">
+            <summary>
+                Gets the <see cref="T:PizzaManager.BlazorServer.Service.Services.PatesFrontService" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Components.Pages.Pizza.Pizzas.OnInitializedAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Components.Pages.Error.OnInitialized">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

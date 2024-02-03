@@ -1,6 +1,6 @@
 ﻿@page "/ingredients/create"
 @using PizzaManager.BlazorServer.Service.Models
-@using PizzaManager.BlazorServer.Service.Pizzas
+@using PizzaManager.BlazorServer.Service.Services
 
 
 @inject IngredientsFrontService IngredientService
@@ -25,11 +25,11 @@
 </EditForm>
 
 @code {
-    private Ingredient newIngredient = Ingredient.Empty;
+    private IngredientModel newIngredient = IngredientModel.Empty;
 
-    private void CreateIngredient()
+    private async Task CreateIngredient()
     {
-        this.IngredientService.Create(this.newIngredient);
+        await this.IngredientService.CreateAsync(this.newIngredient);
         this.newIngredient = new () {Nom = ""};
     }
 

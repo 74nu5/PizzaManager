@@ -14,14 +14,14 @@ public class CreateModel : PageModel
         => this.pateService = pateService;
 
     [BindProperty]
-    public Pate Pate { get; set; } = Pate.Empty;
+    public PateDto Pate { get; set; } = PateDto.Empty;
 
-    public IActionResult OnPost()
+    public async Task<IActionResult> OnPost()
     {
         if (!this.ModelState.IsValid)
             return this.Page();
 
-        this.pateService.Create(this.Pate);
+        await this.pateService.CreateAsync(this.Pate, CancellationToken.None);
         return this.RedirectToPage("./Index");
     }
 }

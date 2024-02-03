@@ -13,7 +13,7 @@ public class IndexModel : PageModel
     public IndexModel(IngredientService ingredientService)
         => this.ingredientService = ingredientService;
 
-    public List<Ingredient> Ingredients { get; set; } = [];
+    public List<IngredientDto> Ingredients { get; set; } = [];
 
     public void OnGet()
         => this.Ingredients = [.. this.ingredientService.GetAll()];

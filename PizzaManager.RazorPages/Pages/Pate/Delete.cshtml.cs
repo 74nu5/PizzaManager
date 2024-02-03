@@ -13,16 +13,16 @@ public class DeleteModel : PageModel
     public DeleteModel(PateService pateService)
         => this.pateService = pateService;
 
-    public Pate Pate { get; set; } = null!;
+    public PateDto Pate { get; set; } = null!;
 
     public void OnGet(int id)
     {
         this.Pate = this.pateService.Get(id) ?? new() { Nom = "Pate inexistante" };
     }
 
-    public IActionResult OnPost(int id)
+    public async Task<IActionResult> OnPost(int id)
     {
-        this.pateService.Delete(id);
+        await this.pateService.DeleteAsync(id, CancellationToken.None);
         return this.RedirectToPage("./Index");
     }
 }

@@ -3,32 +3,37 @@ namespace PizzaManager.BlazorServer.Components.Pages.Ingredients;
 using Microsoft.AspNetCore.Components;
 
 using PizzaManager.BlazorServer.Service.Models;
-using PizzaManager.BlazorServer.Service.Pizzas;
+using PizzaManager.BlazorServer.Service.Services;
 
+/// <summary>
+///     Represents the ingredients page.
+/// </summary>
 public partial class Ingredients
 {
-    private Ingredient newIngredient = Ingredient.Empty;
+    private IngredientModel newIngredient = IngredientModel.Empty;
 
+    private IEnumerable<IngredientModel> listeIngredients = [];
+
+    /// <summary>
+    ///     Gets the <see cref="IngredientsFrontService" />.
+    /// </summary>
     [Inject]
-    public IngredientsFrontService IngredientService { get; set; } = null!;
+    public IngredientsFrontService IngredientService { get; init; } = null!;
 
-    private IEnumerable<Ingredient> ListeIngredients { get; set; } = [];
-
+    /// <inheritdoc />
     protected override async Task OnInitializedAsync()
+        => this.listeIngredients = await this.IngredientService.GetAllAsync();
+
+    private async Task AjouterIngredientAsync()
     {
-        this.ListeIngredients = await this.IngredientService.GetAllAsync();
+        await this.IngredientService.CreateAsync(this.newIngredient);
+        this.newIngredient = IngredientModel.Empty;
+        this.listeIngredients = await this.IngredientService.GetAllAsync();
     }
 
-    private async Task AjouterIngredient()
-    {
-        this.IngredientService.Create(this.newIngredient);
-        this.newIngredient = Ingredient.Empty;
-        this.ListeIngredients = await this.IngredientService.GetAllAsync();
-    }
-
-    private async Task SupprimerIngredient(int id)
+    private async Task SupprimerIngredientAsync(int id)
     {
         this.IngredientService.Delete(id);
-        this.ListeIngredients = await this.IngredientService.GetAllAsync();
+        this.listeIngredients = await this.IngredientService.GetAllAsync();
     }
 }

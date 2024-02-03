@@ -12,7 +12,7 @@ public class DeleteModel : PageModel
     public DeleteModel(PizzaService pizzaService)
         => this.pizzaService = pizzaService;
 
-    public Pizza Pizza { get; set; } = null!;
+    public PizzaDto Pizza { get; set; } = null!;
 
     public void OnGet(int id)
         => this.Pizza = this.pizzaService.Get(id) ?? new() { Nom = "Pizza inexistante", Pate = new() { Nom = string.Empty } };

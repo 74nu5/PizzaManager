@@ -13,7 +13,7 @@ public class DetailsModel : PageModel
         => this.pateService = pateService;
 
 
-    public Pate Pate { get; set; } = null!;
+    public PateDto Pate { get; set; } = null!;
 
     public void OnGet(int id)
     {

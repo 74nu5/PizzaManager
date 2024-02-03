@@ -6,10 +6,10 @@
 <h1 class="text-danger">Error.</h1>
 <h2 class="text-danger">An error occurred while processing your request.</h2>
 
-@if (ShowRequestId)
+@if (this.ShowRequestId)
 {
     <p>
-        <strong>Request ID:</strong> <code>@RequestId</code>
+        <strong>Request ID:</strong> <code>@(this.RequestId)</code>
     </p>
 }
 
@@ -25,12 +25,15 @@
 </p>
 
 @code{
+
     [CascadingParameter]
     private HttpContext? HttpContext { get; set; }
 
     private string? RequestId { get; set; }
-    private bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
-    protected override void OnInitialized() =>
-        RequestId = Activity.Current?.Id ?? HttpContext?.TraceIdentifier;
+    private bool ShowRequestId => !string.IsNullOrEmpty(this.RequestId);
+
+    /// <inheritdoc />
+    protected override void OnInitialized() => this.RequestId = Activity.Current?.Id ?? this.HttpContext?.TraceIdentifier;
+
 }

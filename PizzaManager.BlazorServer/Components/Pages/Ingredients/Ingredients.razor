@@ -19,16 +19,17 @@
             <input @bind="this.newIngredient.NCal"/>
         </td>
         <td>
-            <button @onclick="this.AjouterIngredient">Ajouter</button>
+            <button @onclick="this.AjouterIngredientAsync">Ajouter</button>
         </td>
     </tr>
-    @foreach (var ingredient in this.ListeIngredients)
+    @foreach (var ingredient in this.listeIngredients)
     {
         <tr>
             <td>@ingredient.Nom</td>
             <td>@ingredient.NCal</td>
             <td>
-                <button @onclick="() => this.SupprimerIngredient(ingredient.Id)">Supprimer</button>
+                <button @onclick="() => this.SupprimerIngredientAsync(ingredient.Id)">Supprimer</button>
+                    <NavLink href="@($"/ingredients/{ingredient.Id}/edit")">Editer</NavLink>
             </td>
         </tr>
     }

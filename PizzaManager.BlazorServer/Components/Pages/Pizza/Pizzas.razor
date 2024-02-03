@@ -40,17 +40,17 @@
             </select>
         </td>
         <td>
-            <button @onclick="this.AjouterPizza">Ajouter</button>
+            <button @onclick="this.AjouterPizzaAsync">Ajouter</button>
         </td>
     </tr>
     @foreach (var pizza in this.listePizzas)
     {
         <tr>
             <td>@pizza.Nom</td>
-            <td>@pizza.Pate.Nom</td>
+                <td>@(pizza.Pate?.Nom ?? string.Empty)</td>
             <td>@(string.Join(", ", pizza.Ingredients.Select(i => i.Nom)))</td>
             <td>
-                <button @onclick="() => this.SupprimerPizza(pizza.Id)">Supprimer</button>
+                <button @onclick="() => this.SupprimerPizzaAsync(pizza.Id)">Supprimer</button>
             </td>
         </tr>
     }

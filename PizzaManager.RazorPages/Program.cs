@@ -1,10 +1,8 @@
-using PizzaManager.Business.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddBusinessServices();
+//builder.Services.AddBusinessServices();
 
 var app = builder.Build();
 

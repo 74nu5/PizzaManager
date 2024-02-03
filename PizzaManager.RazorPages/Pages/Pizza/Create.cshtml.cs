@@ -23,7 +23,7 @@ public class CreateModel : PageModel
     }
 
     [BindProperty]
-    public Pizza Pizza { get; set; } = Pizza.Empty;
+    public PizzaDto Pizza { get; set; } = PizzaDto.Empty;
 
     [BindProperty]
     public int[] IngredientsIds { get; set; } = [];

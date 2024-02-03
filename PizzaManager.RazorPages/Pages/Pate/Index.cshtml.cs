@@ -13,7 +13,7 @@ public class IndexModel : PageModel
     public IndexModel(PateService pateService)
         => this.pateService = pateService;
 
-    public List<Pate> Pates { get; set; } = [];
+    public List<PateDto> Pates { get; set; } = [];
 
     public void OnGet()
         => this.Pates = [.. this.pateService.GetAll()];

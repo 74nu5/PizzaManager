@@ -17,16 +17,16 @@
             <input @bind="this.newPateNom"/>
         </td>
         <td>
-            <button @onclick="this.AjouterPate">Ajouter</button>
+            <button @onclick="this.AjouterPateAsync">Ajouter</button>
         </td>
 
     </tr>
-    @foreach (var pate in this.ListePates)
+    @foreach (var pate in this.listePates)
     {
         <tr>
             <td>@pate.Nom</td>
             <td>
-                <button @onclick="() => this.SupprimerPate(pate.Id)">Supprimer</button>
+                <button @onclick="() => this.SupprimerPateAsync(pate.Id)">Supprimer</button>
             </td>
         </tr>
     }

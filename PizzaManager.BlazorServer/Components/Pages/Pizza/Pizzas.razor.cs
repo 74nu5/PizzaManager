@@ -3,31 +3,44 @@ namespace PizzaManager.BlazorServer.Components.Pages.Pizza;
 using Microsoft.AspNetCore.Components;
 
 using PizzaManager.BlazorServer.Service.Models;
-using PizzaManager.BlazorServer.Service.Pizzas;
+using PizzaManager.BlazorServer.Service.Services;
 
+/// <summary>
+///     Represents the pizzas page.
+/// </summary>
 public partial class Pizzas
 {
-    private PizzaOutput newPizza = new();
+    private PizzaModelOutput newPizza = new();
 
-    private IEnumerable<Pizza> listePizzas = [];
+    private IEnumerable<PizzaModel> listePizzas = [];
 
-    private IEnumerable<Pate> listePates = [];
+    private IEnumerable<PateModel> listePates = [];
 
-    private IEnumerable<Ingredient> listeIngredients = [];
+    private IEnumerable<IngredientModel> listeIngredients = [];
 
     private bool hasError;
 
-    private string errorMessage;
+    private string errorMessage = string.Empty;
 
+    /// <summary>
+    ///     Gets the <see cref="PizzasFrontService" />.
+    /// </summary>
     [Inject]
-    private PizzasFrontService PizzaService { get; set; } = null!;
+    public PizzasFrontService PizzaService { get; init; } = null!;
 
+    /// <summary>
+    ///     Gets the <see cref="IngredientsFrontService" />.
+    /// </summary>
     [Inject]
-    private IngredientsFrontService IngredientService { get; set; } = null!;
+    public IngredientsFrontService IngredientService { get; init; } = null!;
 
+    /// <summary>
+    ///     Gets the <see cref="PatesFrontService" />.
+    /// </summary>
     [Inject]
-    private PatesFrontService PateService { get; set; } = null!;
+    public PatesFrontService PateService { get; init; } = null!;
 
+    /// <inheritdoc />
     protected override async Task OnInitializedAsync()
     {
         this.listePizzas = await this.PizzaService.GetAllAsync();
@@ -35,9 +48,9 @@ public partial class Pizzas
         this.listeIngredients = await this.IngredientService.GetAllAsync();
     }
 
-    private async Task AjouterPizza()
+    private async Task AjouterPizzaAsync()
     {
-        var result = await this.PizzaService.CreateAsyc(this.newPizza);
+        var result = await this.PizzaService.CreateAsync(this.newPizza);
         if (result is not null)
         {
             this.hasError = true;
@@ -51,8 +64,6 @@ public partial class Pizzas
         this.listePizzas = await this.PizzaService.GetAllAsync();
     }
 
-    private async Task SupprimerPizza(int id)
-    {
-        await this.PizzaService.DeleteAsync(id);
-    }
+    private async Task SupprimerPizzaAsync(int id)
+        => await this.PizzaService.DeleteAsync(id);
 }

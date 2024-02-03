@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PizzaManager.BlazorServer.Service</name>
+    </assembly>
+    <members>
+        <member name="T:PizzaManager.BlazorServer.Service.Extensions.FrontServiceExtensions">
+            <summary>
+                Provides extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> interface.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Extensions.FrontServiceExtensions.AddFrontServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Adds the front services to the specified <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add the front services to.</param>
+        </member>
+        <member name="T:PizzaManager.BlazorServer.Service.Models.IngredientModel">
+            <summary>
+                Represents an ingredient.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.IngredientModel.Empty">
+            <summary>
+                Gets the empty <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" /> object.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.IngredientModel.Id">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.BlazorServer.Service.Models.IngredientModel.Id" /> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.IngredientModel.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.IngredientModel.NCal">
+            <summary>
+                Gets or sets the number of calories of the <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" />.
+            </summary>
+        </member>
+        <member name="T:PizzaManager.BlazorServer.Service.Models.PateModel">
+            <summary>
+                Represents a pate from api deserialization.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PateModel.Empty">
+            <summary>
+                Gets an empty pate.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PateModel.Id">
+            <summary>
+                Gets or sets the pate id.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PateModel.Nom">
+            <summary>
+                Gets or sets the pate name.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PateModel.NCal">
+            <summary>
+                Gets or sets the pate price.
+            </summary>
+        </member>
+        <member name="T:PizzaManager.BlazorServer.Service.Models.PizzaModel">
+            <summary>
+                Represents a pizza.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PizzaModel.Empty">
+            <summary>
+                Gets the empty <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" /> object.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PizzaModel.Id">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.BlazorServer.Service.Models.PizzaModel.Id" /> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PizzaModel.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PizzaModel.Pate">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.BlazorServer.Service.Models.PizzaModel.Pate" /> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PizzaModel.Ingredients">
+            <summary>
+                Gets the <see cref="P:PizzaManager.BlazorServer.Service.Models.PizzaModel.Ingredients" /> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" />.
+            </summary>
+        </member>
+        <member name="T:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput">
+            <summary>
+                Represents a pizza to api deserialization.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput.Id">
+            <summary>
+                Gets or sets the empty <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput" /> object.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput.PateId">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput.PateId" /> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput.IngredientsIds">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput.IngredientsIds" /> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput" />.
+            </summary>
+        </member>
+        <member name="T:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService">
+            <summary>
+                Represents the front service for the <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+                Initializes a new instance of the <see cref="T:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService" /> class.
+            </summary>
+            <param name="httpClientFactory">The <see cref="T:System.Net.Http.IHttpClientFactory" /> to create the <see cref="T:System.Net.Http.HttpClient" />.</param>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService.GetAllAsync">
+            <summary>
+                Gets all the <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" />.
+            </summary>
+            <returns>Returns the list of <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" />.</returns>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService.GetAsync(System.Int32)">
+            <summary>
+                Gets the <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" /> asynchronously.
+            </summary>
+            <param name="ingredientId">The <see cref="P:PizzaManager.BlazorServer.Service.Models.PateModel.Id" /> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" /> to get.</param>
+            <returns>The <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" /> with the specified <paramref name="ingredientId" />; otherwise, <see cref="P:PizzaManager.BlazorServer.Service.Models.IngredientModel.Empty" />.</returns>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService.Delete(System.Int32)">
+            <summary>
+                Deletes the <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" /> with the specified <paramref name="ingredientId" />.
+            </summary>
+            <param name="ingredientId">The <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" /> identifier.</param>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService.CreateAsync(PizzaManager.BlazorServer.Service.Models.IngredientModel)">
+            <summary>
+                Creates the <paramref name="newIngredient" />.
+            </summary>
+            <param name="newIngredient">The <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" /> to create.</param>
+            <returns>Return null or an error message.</returns>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.IngredientsFrontService.UpdateAsync(PizzaManager.BlazorServer.Service.Models.IngredientModel)">
+            <summary>
+                Updates a <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" /> asynchronously.
+            </summary>
+            <param name="ingredient">The <see cref="T:PizzaManager.BlazorServer.Service.Models.IngredientModel" /> to update.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:PizzaManager.BlazorServer.Service.Services.PatesFrontService">
+            <summary>
+               Represents the front service for the <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PatesFrontService.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PizzaManager.BlazorServer.Service.Services.PatesFrontService"/> class.
+            </summary>
+            <param name="httpClientFactory">
+            The <see cref="T:System.Net.Http.IHttpClientFactory"/> to create the <see cref="T:System.Net.Http.HttpClient"/>.
+            </param>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PatesFrontService.GetAllAsync">
+            <summary>
+            Gets all the <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> asynchronously.
+            </summary>
+            <returns>Returns the list of <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/>.</returns>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PatesFrontService.GetAsync(System.Int32)">
+            <summary>
+            Gets the <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> asynchronously.
+            </summary>
+            <param name="pateId">The <see cref="P:PizzaManager.BlazorServer.Service.Models.PateModel.Id"/> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> to get.</param>
+            <returns>The <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> with the specified <paramref name="pateId"/>; otherwise, <see cref="P:PizzaManager.BlazorServer.Service.Models.PateModel.Empty"/>.</returns>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PatesFrontService.DeleteAsync(System.Int32)">
+            <summary>
+            Deletes a <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> asynchronously.
+            </summary>
+            <param name="pateId">The <see cref="P:PizzaManager.BlazorServer.Service.Models.PateModel.Id"/> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> to delete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PatesFrontService.CreateAsync(PizzaManager.BlazorServer.Service.Models.PateModel)">
+            <summary>
+            Creates a <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> asynchronously.
+            </summary>
+            <param name="newPate">The <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> to create.</param>
+            <returns>Returns <see langword="null"/> if the <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> has been created; otherwise, the error message.</returns>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PatesFrontService.UpdateAsync(PizzaManager.BlazorServer.Service.Models.PateModel)">
+            <summary>
+            Updates a <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> asynchronously.
+            </summary>
+            <param name="pate">The <see cref="T:PizzaManager.BlazorServer.Service.Models.PateModel"/> to update.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:PizzaManager.BlazorServer.Service.Services.PizzasFrontService">
+            <summary>
+                Represents the front service for the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PizzasFrontService.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+                Initializes a new instance of the <see cref="T:PizzaManager.BlazorServer.Service.Services.PizzasFrontService" /> class.
+            </summary>
+            <param name="httpClientFactory">The <see cref="T:System.Net.Http.IHttpClientFactory" /> to create the <see cref="T:System.Net.Http.HttpClient" />.</param>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PizzasFrontService.GetAllAsync">
+            <summary>
+                Gets all the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" /> asynchronously.
+            </summary>
+            <returns>Returns the list of <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" />.</returns>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PizzasFrontService.DeleteAsync(System.Int32)">
+            <summary>
+                Deletes a <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" /> asynchronously.
+            </summary>
+            <param name="id">The <see cref="P:PizzaManager.BlazorServer.Service.Models.PizzaModel.Id" /> of the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" /> to delete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.BlazorServer.Service.Services.PizzasFrontService.CreateAsync(PizzaManager.BlazorServer.Service.Models.PizzaModelOutput)">
+            <summary>
+                Creates a <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" /> asynchronously.
+            </summary>
+            <param name="newPizza">The <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModelOutput" /> to create.</param>
+            <returns>Returns <see langword="null" /> if the <see cref="T:PizzaManager.BlazorServer.Service.Models.PizzaModel" /> has been created; otherwise, the error message.</returns>
+        </member>
+    </members>
+</doc>

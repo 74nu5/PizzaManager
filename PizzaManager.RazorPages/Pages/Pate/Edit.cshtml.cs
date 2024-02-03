@@ -14,14 +14,14 @@ public class EditModel : PageModel
         => this.pateService = pateService;
 
     [BindProperty]
-    public Pate Pate { get; set; } = new() { Nom = "Pate par défaut" };
+    public PateDto Pate { get; set; } = new() { Nom = "Pate par défaut" };
 
     public void OnGet(int id)
         => this.Pate = this.pateService.Get(id) ?? new() { Nom = "Pate inexistant" };
 
-    public IActionResult OnPost(int id)
+    public async Task<IActionResult> OnPost(int id)
     {
-        this.pateService.Update(id, this.Pate);
+        await this.pateService.UpdateAsync(id, this.Pate, CancellationToken.None);
         return this.RedirectToPage("./Index");
     }
 }

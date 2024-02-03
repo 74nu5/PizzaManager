@@ -1,0 +1,59 @@
+﻿@page "/ingredients/{IngredientId:int}/edit"
+@using PizzaManager.BlazorServer.Service.Models
+@using PizzaManager.BlazorServer.Service.Services
+
+
+@inject IngredientsFrontService IngredientService
+
+<h3>CreateIngredients</h3>
+
+<EditForm Model="this.currentIngredient" OnValidSubmit="this.EditIngredient">
+    <div class="form-group">
+        <label for="nom">Nom :</label>
+        <InputText id="nom" class="form-control" @bind-Value="this.currentIngredient.Nom"/>
+        <ValidationMessage For="() => this.currentIngredient.Nom"/>
+    </div>
+
+    <div class="form-group">
+        <label for="nCal">NCal :</label>
+        <InputNumber id="nCal" class="form-control" @bind-Value="this.currentIngredient.NCal"/>
+        <ValidationMessage For="() => this.currentIngredient.NCal"/>
+    </div>
+
+    <button type="submit">Soummettre</button>
+
+</EditForm>
+
+@code {
+
+    private IngredientModel currentIngredient = IngredientModel.Empty;
+
+    /// <summary>
+    ///     The ingredient identifier.
+    /// </summary>
+    [Parameter]
+    public int IngredientId { get; set; }
+
+    /// <summary>
+    ///    Gets the navigation manager.
+    /// </summary>
+    [Inject]
+    public NavigationManager NavigationManager { get; init; } = default!;
+
+    /// <inheritdoc />
+    protected override async Task OnParametersSetAsync()
+    {
+        var ingredientModel = await this.IngredientService.GetAsync(this.IngredientId);
+        if (ingredientModel is not null)
+            this.currentIngredient = ingredientModel;
+    }
+
+    private async Task EditIngredient()
+    {
+        await this.IngredientService.UpdateAsync(this.currentIngredient);
+
+        this.currentIngredient = IngredientModel.Empty;
+        this.NavigationManager.NavigateTo("ingredients");
+    }
+
+}
