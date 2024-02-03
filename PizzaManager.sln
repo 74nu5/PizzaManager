@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaManager.Business", "Pi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaManager.Api", "PizzaManager.Api\PizzaManager.Api.csproj", "{2F06FE31-DEBA-4769-A67F-E1D898846C96}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaManager.RazorPages", "PizzaManager.RazorPages\PizzaManager.RazorPages.csproj", "{9E15AD46-0FD1-46AA-BC76-6713AF5FACB9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaManager.BlazorServer", "PizzaManager.BlazorServer\PizzaManager.BlazorServer.csproj", "{586DFDBB-BAF5-4C24-9A68-9AE66C682B34}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaManager.BlazorServer.Service", "PizzaManager.BlazorServer.Service\PizzaManager.BlazorServer.Service.csproj", "{BBD8BF3B-A7FB-47D2-B63E-D5AFAB15B25D}"
@@ -17,7 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front", "Front", "{E4F80197
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Back", "Back", "{E97AB922-19BD-42BE-8FC7-3D32DA2468A4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{28D1EA52-0397-4606-BA67-F985D578DD9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaManager.Data", "PizzaManager.Data\PizzaManager.Data.csproj", "{5A5651E2-D82D-4458-876B-FBA3704C14CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{70C6C631-9C89-4D90-ADE4-3E0267859F73}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		stylecop.json = stylecop.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +37,6 @@ Global
 		{2F06FE31-DEBA-4769-A67F-E1D898846C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F06FE31-DEBA-4769-A67F-E1D898846C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F06FE31-DEBA-4769-A67F-E1D898846C96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E15AD46-0FD1-46AA-BC76-6713AF5FACB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E15AD46-0FD1-46AA-BC76-6713AF5FACB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E15AD46-0FD1-46AA-BC76-6713AF5FACB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E15AD46-0FD1-46AA-BC76-6713AF5FACB9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{586DFDBB-BAF5-4C24-9A68-9AE66C682B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{586DFDBB-BAF5-4C24-9A68-9AE66C682B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{586DFDBB-BAF5-4C24-9A68-9AE66C682B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +45,10 @@ Global
 		{BBD8BF3B-A7FB-47D2-B63E-D5AFAB15B25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD8BF3B-A7FB-47D2-B63E-D5AFAB15B25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBD8BF3B-A7FB-47D2-B63E-D5AFAB15B25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A5651E2-D82D-4458-876B-FBA3704C14CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A5651E2-D82D-4458-876B-FBA3704C14CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A5651E2-D82D-4458-876B-FBA3704C14CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A5651E2-D82D-4458-876B-FBA3704C14CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,9 +56,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8EEE6E34-CD4D-4459-B3F9-75978F78FFC1} = {E97AB922-19BD-42BE-8FC7-3D32DA2468A4}
 		{2F06FE31-DEBA-4769-A67F-E1D898846C96} = {E97AB922-19BD-42BE-8FC7-3D32DA2468A4}
-		{9E15AD46-0FD1-46AA-BC76-6713AF5FACB9} = {28D1EA52-0397-4606-BA67-F985D578DD9B}
 		{586DFDBB-BAF5-4C24-9A68-9AE66C682B34} = {E4F80197-FE91-435F-A043-C62AA97B7696}
 		{BBD8BF3B-A7FB-47D2-B63E-D5AFAB15B25D} = {E4F80197-FE91-435F-A043-C62AA97B7696}
+		{5A5651E2-D82D-4458-876B-FBA3704C14CF} = {E97AB922-19BD-42BE-8FC7-3D32DA2468A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {86B39A29-83AC-4D34-9B76-F977BA046749}

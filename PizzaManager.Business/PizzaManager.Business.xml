@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PizzaManager.Business</name>
+    </assembly>
+    <members>
+        <member name="T:PizzaManager.Business.Extensions.BusinessExtensions">
+            <summary>
+                Extension methods for business services.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Business.Extensions.BusinessExtensions.AddBusinessServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.EntityFrameworkCore.DbContextOptionsBuilder})">
+            <summary>
+                Adds the business services to the service collection.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="dbBuilder"> The database builder action. This is optional and can be used to configure the database connection. </param>
+        </member>
+        <member name="T:PizzaManager.Business.Models.IngredientDto">
+            <summary>
+                Represents an <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.IngredientDto.Empty">
+            <summary>
+                Gets the empty <see cref="T:PizzaManager.Business.Models.IngredientDto" /> object.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.IngredientDto.Id">
+            <summary>
+                Gets the <see cref="P:PizzaManager.Business.Models.IngredientDto.Id" /> of the <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.IngredientDto.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.IngredientDto.NCal">
+            <summary>
+                Gets or sets the number of calories of the <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Business.Models.IngredientDto.FromEntity(PizzaManager.Data.Entities.Ingredient)">
+            <summary>
+                Convert a <see cref="T:PizzaManager.Data.Entities.Ingredient" /> to a <see cref="T:PizzaManager.Business.Models.IngredientDto" />.
+            </summary>
+            <param name="ingredient">The <see cref="T:PizzaManager.Data.Entities.Ingredient" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Business.Models.IngredientDto" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Models.IngredientDto.FromEntities(System.Collections.Generic.IEnumerable{PizzaManager.Data.Entities.Ingredient})">
+            <summary>
+                Convert a <see cref="T:PizzaManager.Data.Entities.Ingredient" /> to a <see cref="T:PizzaManager.Business.Models.IngredientDto" />.
+            </summary>
+            <param name="ingredients">The <see cref="T:PizzaManager.Data.Entities.Ingredient" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Business.Models.IngredientDto" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Models.IngredientDto.ToEntity(PizzaManager.Business.Models.IngredientDto)">
+            <summary>
+                Convert a <see cref="T:PizzaManager.Business.Models.IngredientDto" /> to a <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+            <param name="ingredientDto">The <see cref="T:PizzaManager.Business.Models.IngredientDto" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Data.Entities.Ingredient" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Models.IngredientDto.ToEntities(System.Collections.Generic.IEnumerable{PizzaManager.Business.Models.IngredientDto})">
+            <summary>
+                Convert a list of <see cref="T:PizzaManager.Business.Models.IngredientDto" /> to a list of <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+            <param name="ingredientsDtos">The <see cref="T:PizzaManager.Business.Models.IngredientDto" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Data.Entities.Ingredient" /> list.</returns>
+        </member>
+        <member name="T:PizzaManager.Business.Models.PateDto">
+            <summary>
+                Represents a <see cref="T:PizzaManager.Data.Entities.Pate" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PateDto.Empty">
+            <summary>
+                Gets the empty <see cref="T:PizzaManager.Business.Models.PateDto" /> object.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PateDto.Id">
+            <summary>
+                Gets the <see cref="P:PizzaManager.Business.Models.PateDto.Id" /> of the <see cref="T:PizzaManager.Data.Entities.Pate" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PateDto.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.Data.Entities.Pate" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Business.Models.PateDto.FromEntity(PizzaManager.Data.Entities.Pate)">
+            <summary>
+                Convert a <see cref="T:PizzaManager.Data.Entities.Pate" /> to a <see cref="T:PizzaManager.Business.Models.PateDto" />.
+            </summary>
+            <param name="pate">The <see cref="T:PizzaManager.Data.Entities.Pate" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Business.Models.PateDto" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Models.PateDto.FromEntities(System.Collections.Generic.IEnumerable{PizzaManager.Data.Entities.Pate})">
+            <summary>
+                Convert a <see cref="T:PizzaManager.Data.Entities.Pate" /> to a <see cref="T:PizzaManager.Business.Models.PateDto" />.
+            </summary>
+            <param name="pates">The <see cref="T:PizzaManager.Data.Entities.Pate" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Business.Models.PateDto" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Models.PateDto.ToEntities(System.Collections.Generic.IEnumerable{PizzaManager.Business.Models.PateDto})">
+            <summary>
+                Convert a list of <see cref="T:PizzaManager.Business.Models.PateDto" /> to a list of <see cref="T:PizzaManager.Data.Entities.Pate" />.
+            </summary>
+            <param name="patesDtos">The <see cref="T:PizzaManager.Business.Models.PateDto" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Data.Entities.Pate" /> list.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Models.PateDto.ToEntity(PizzaManager.Business.Models.PateDto)">
+            <summary>
+                Convert a <see cref="T:PizzaManager.Business.Models.PateDto" /> to a <see cref="T:PizzaManager.Data.Entities.Pate" />.
+            </summary>
+            <param name="pateDto">The <see cref="T:PizzaManager.Business.Models.PateDto" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Data.Entities.Pate" /> object.</returns>
+        </member>
+        <member name="T:PizzaManager.Business.Models.PizzaDto">
+            <summary>
+                Class which represents a pizza.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PizzaDto.Empty">
+            <summary>
+                Gets the empty <see cref="T:PizzaManager.Business.Models.PizzaDto" /> object.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PizzaDto.Id">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Business.Models.PizzaDto.Id" /> of the <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PizzaDto.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PizzaDto.Pate">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Business.Models.PizzaDto.Pate" /> of the <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PizzaDto.Ingredients">
+            <summary>
+                Gets the <see cref="P:PizzaManager.Business.Models.PizzaDto.Ingredients" /> of the <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Business.Models.PizzaDto.FromEntity(PizzaManager.Data.Entities.Pizza)">
+            <summary>
+                Convert a <see cref="T:PizzaManager.Data.Entities.Pizza" /> to a <see cref="T:PizzaManager.Business.Models.PizzaDto" />.
+            </summary>
+            <param name="pizza">The <see cref="T:PizzaManager.Data.Entities.Pizza" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Business.Models.PizzaDto" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Models.PizzaDto.FromEntities(System.Collections.Generic.IEnumerable{PizzaManager.Data.Entities.Pizza})">
+            <summary>
+                Convert a list of <see cref="T:PizzaManager.Data.Entities.Pizza" /> to a list of <see cref="T:PizzaManager.Business.Models.PizzaDto" />.
+            </summary>
+            <param name="pizzas">The <see cref="T:PizzaManager.Data.Entities.Pizza" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Business.Models.PizzaDto" /> list.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Models.PizzaDto.ToEntity(PizzaManager.Business.Models.PizzaDto)">
+            <summary>
+                Convert a <see cref="T:PizzaManager.Business.Models.PizzaDto" /> to a <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+            <param name="pizzaDto">The <see cref="T:PizzaManager.Business.Models.PizzaDto" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Data.Entities.Pizza" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Models.PizzaDto.ToEntities(System.Collections.Generic.IEnumerable{PizzaManager.Business.Models.PizzaDto})">
+            <summary>
+                Convert a list of <see cref="T:PizzaManager.Business.Models.PizzaDto" /> to a list of <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+            <param name="pizzaDtos">The <see cref="T:PizzaManager.Business.Models.PizzaDto" /> to convert.</param>
+            <returns>Returns the converted <see cref="T:PizzaManager.Data.Entities.Pizza" /> list.</returns>
+        </member>
+        <member name="T:PizzaManager.Business.Models.PizzaInput">
+            <summary>
+                Represents a <see cref="T:PizzaManager.Business.Models.PizzaInput" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PizzaInput.Id">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Business.Models.PizzaInput.Id" /> of the <see cref="T:PizzaManager.Business.Models.PizzaInput" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PizzaInput.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.Business.Models.PizzaInput" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PizzaInput.PateId">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Business.Models.PizzaInput.PateId" /> of the <see cref="T:PizzaManager.Business.Models.PizzaInput" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Business.Models.PizzaInput.IngredientsIds">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Business.Models.PizzaInput.IngredientsIds" /> of the <see cref="T:PizzaManager.Business.Models.PizzaInput" />.
+            </summary>
+        </member>
+        <member name="T:PizzaManager.Business.Services.IngredientService">
+            <summary>
+                Class which manages the <see cref="T:PizzaManager.Business.Models.IngredientDto" />.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Business.Services.IngredientService.#ctor(PizzaManager.Data.PizzaManagerContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:PizzaManager.Business.Services.IngredientService" /> class.
+            </summary>
+            <param name="managerContext">The pizza manager context.</param>
+        </member>
+        <member name="M:PizzaManager.Business.Services.IngredientService.CreateAsync(PizzaManager.Business.Models.IngredientDto,System.Threading.CancellationToken)">
+            <summary>
+                Creates the specified ingredient.
+            </summary>
+            <param name="ingredient">The ingredient.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.IngredientService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+                Deletes the specified ingredient with identifier.
+            </summary>
+            <param name="ingredientId">The ingredient identifier.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.IngredientService.UpdateAsync(System.Int32,PizzaManager.Business.Models.IngredientDto,System.Threading.CancellationToken)">
+            <summary>
+                Updates the specified ingredient with identifier.
+            </summary>
+            <param name="id">The identifier of the <see cref="T:PizzaManager.Business.Models.IngredientDto" /> to update.</param>
+            <param name="ingredient">The <see cref="T:PizzaManager.Business.Models.IngredientDto" /> to update.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.IngredientService.Get(System.Int32)">
+            <summary>
+                Gets the specified ingredient with identifier.
+            </summary>
+            <param name="id">The identifier of the <see cref="T:PizzaManager.Business.Models.IngredientDto" /> to get.</param>
+            <returns>Returns the <see cref="T:PizzaManager.Business.Models.IngredientDto" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.IngredientService.GetAll">
+            <summary>
+                Gets all the <see cref="T:PizzaManager.Business.Models.IngredientDto" /> objects.
+            </summary>
+            <returns>Returns the <see cref="T:PizzaManager.Business.Models.IngredientDto" /> list.</returns>
+        </member>
+        <member name="T:PizzaManager.Business.Services.PateService">
+            <summary>
+                Class which manages the <see cref="T:PizzaManager.Business.Models.PateDto" /> objects.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PateService.#ctor(PizzaManager.Data.PizzaManagerContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:PizzaManager.Business.Services.PateService" /> class.
+            </summary>
+            <param name="managerContext">The manager context.</param>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PateService.CreateAsync(PizzaManager.Business.Models.PateDto,System.Threading.CancellationToken)">
+            <summary>
+                Creates the specified pate.
+            </summary>
+            <param name="pate">The pate.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PateService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+                Deletes the specified pate identifier.
+            </summary>
+            <param name="pateId">The pate identifier.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PateService.UpdateAsync(System.Int32,PizzaManager.Business.Models.PateDto,System.Threading.CancellationToken)">
+            <summary>
+                Updates the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="pate">The pate.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PateService.Get(System.Int32)">
+            <summary>
+                Gets the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>Returns the <see cref="T:PizzaManager.Business.Models.PateDto" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PateService.GetAll">
+            <summary>
+                Gets all the <see cref="T:PizzaManager.Business.Models.PateDto" /> objects.
+            </summary>
+            <returns>Returns the <see cref="T:System.Collections.Generic.IReadOnlyCollection`1" /> of <see cref="T:PizzaManager.Business.Models.PateDto" /> objects.</returns>
+        </member>
+        <member name="T:PizzaManager.Business.Services.PizzaService">
+            <summary>
+                Provides a service to manage the pizzas.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PizzaService.#ctor(PizzaManager.Data.PizzaManagerContext)">
+            <summary>
+                Initializes a new instance of the <see cref="T:PizzaManager.Business.Services.PizzaService" /> class.
+            </summary>
+            <param name="managerContext">The manager context.</param>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PizzaService.CreateAsync(PizzaManager.Business.Models.PizzaInput,System.Threading.CancellationToken)">
+            <summary>
+                Creates the specified pizza.
+            </summary>
+            <param name="pizza">The pizza to create.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PizzaService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+                Deletes the specified pizza with identifier.
+            </summary>
+            <param name="pizzaId">The pizza identifier.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PizzaService.UpdateAsync(System.Int32,PizzaManager.Business.Models.PizzaInput,System.Threading.CancellationToken)">
+            <summary>
+                Updates the specified pizza with identifier.
+            </summary>
+            <param name="id">The identifier of the <see cref="T:PizzaManager.Business.Models.PizzaDto" /> to update.</param>
+            <param name="pizza">The <see cref="T:PizzaManager.Business.Models.PizzaDto" /> to update.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PizzaService.Get(System.Int32)">
+            <summary>
+                Gets the specified pizza with identifier.
+            </summary>
+            <param name="id">The pizza identifier.</param>
+            <returns>Returns the <see cref="T:PizzaManager.Business.Models.PizzaDto" /> object.</returns>
+        </member>
+        <member name="M:PizzaManager.Business.Services.PizzaService.GetAll">
+            <summary>
+                Gets all the <see cref="T:PizzaManager.Business.Models.PizzaDto" /> objects.
+            </summary>
+            <returns>Returns the <see cref="T:System.Collections.Generic.IReadOnlyCollection`1" /> of <see cref="T:PizzaManager.Business.Models.PizzaDto" /> objects.</returns>
+        </member>
+    </members>
+</doc>

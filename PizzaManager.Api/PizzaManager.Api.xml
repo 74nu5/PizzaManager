@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PizzaManager.Api</name>
+    </assembly>
+    <members>
+        <member name="T:PizzaManager.Api.Extensions.MapEndpoints">
+            <summary>
+                Static class to map the endpoints of the API to the services methods and DTOs to be used.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Api.Extensions.MapEndpoints.MapPatesEndpoints(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
+            <summary>
+                Static extension method to map the pates endpoints to the services methods and DTOs to be used.
+            </summary>
+            <param name="app">The <see cref="T:Microsoft.AspNetCore.Routing.IEndpointRouteBuilder" /> to map the endpoints.</param>
+        </member>
+        <member name="M:PizzaManager.Api.Extensions.MapEndpoints.MapIngredientsEndpoints(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
+            <summary>
+                Static extension method to map the ingredients endpoints to the services methods and DTOs to be used.
+            </summary>
+            <param name="app">The <see cref="T:Microsoft.AspNetCore.Routing.IEndpointRouteBuilder" /> to map the endpoints.</param>
+        </member>
+        <member name="M:PizzaManager.Api.Extensions.MapEndpoints.MapPizzasEndpoints(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
+            <summary>
+                Static extension method to map the pizzas endpoints to the services methods and DTOs to be used.
+            </summary>
+            <param name="app">The <see cref="T:Microsoft.AspNetCore.Routing.IEndpointRouteBuilder" /> to map the endpoints.</param>
+        </member>
+    </members>
+</doc>

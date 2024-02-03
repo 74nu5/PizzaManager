@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 using PizzaManager.Api.Extensions;
 using PizzaManager.Business.Extensions;
 
@@ -8,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddBusinessServices();
+builder.Services.AddBusinessServices(dbContextOptionsBuilder => dbContextOptionsBuilder.UseSqlite(@"Data Source=c:\Temp\PM.db;"));
 
 var app = builder.Build();
 
@@ -20,7 +22,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 
 app.MapPizzasEndpoints();
 app.MapIngredientsEndpoints();

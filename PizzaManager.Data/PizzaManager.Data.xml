@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PizzaManager.Data</name>
+    </assembly>
+    <members>
+        <member name="T:PizzaManager.Data.DataInitialization">
+            <summary>
+               The data initialization service.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Data.DataInitialization.#ctor(System.IServiceProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PizzaManager.Data.DataInitialization"/> class.
+            </summary>
+            <param name="provider">The service provider.</param>
+        </member>
+        <member name="M:PizzaManager.Data.DataInitialization.StartAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.DataInitialization.StopAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:PizzaManager.Data.Entities.Ingredient">
+            <summary>
+                Represents an <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Ingredient.Id">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Data.Entities.Ingredient.Id" /> of the <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Ingredient.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Ingredient.NCal">
+            <summary>
+                Gets or sets the number of calories of the <see cref="T:PizzaManager.Data.Entities.Ingredient" />.
+            </summary>
+        </member>
+        <member name="T:PizzaManager.Data.Entities.Pate">
+            <summary>
+                Represents a <see cref="T:PizzaManager.Data.Entities.Pate" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Pate.Id">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Data.Entities.Pate.Id" /> of the <see cref="T:PizzaManager.Data.Entities.Pate" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Pate.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.Data.Entities.Pate" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Pate.NCal">
+            <summary>
+                Gets or sets the number of calories of the <see cref="T:PizzaManager.Data.Entities.Pate" />.
+            </summary>
+        </member>
+        <member name="T:PizzaManager.Data.Entities.Pizza">
+            <summary>
+                Represents a <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Pizza.Id">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Data.Entities.Pizza.Id" /> of the <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Pizza.Nom">
+            <summary>
+                Gets or sets the name of the <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Pizza.PateId">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Data.Entities.Pizza.PateId" /> of the <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Pizza.Pate">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Data.Entities.Pizza.Pate" /> of the <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.Entities.Pizza.Ingredients">
+            <summary>
+                Gets or sets the <see cref="P:PizzaManager.Data.Entities.Pizza.Ingredients" /> of the <see cref="T:PizzaManager.Data.Entities.Pizza" />.
+            </summary>
+        </member>
+        <member name="T:PizzaManager.Data.Extensions.DataExtensions">
+            <summary>
+                Extension methods for data services.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Data.Extensions.DataExtensions.AddDataServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.EntityFrameworkCore.DbContextOptionsBuilder})">
+            <summary>
+                Adds the data services to the service collection.
+            </summary>
+            <param name="services">The service collection.</param>
+            <param name="dbBuilder">
+                The database builder action. This is optional and can be used to configure the database connection.
+            </param>
+        </member>
+        <member name="T:PizzaManager.Data.Migrations.Initial">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.Migrations.Initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.Migrations.Initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.Migrations.Initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PizzaManager.Data.Migrations.AddConstraints">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.Migrations.AddConstraints.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.Migrations.AddConstraints.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.Migrations.AddConstraints.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PizzaManager.Data.Migrations.AddPateNCal">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.Migrations.AddPateNCal.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.Migrations.AddPateNCal.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PizzaManager.Data.Migrations.AddPateNCal.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PizzaManager.Data.PizzaManagerContext">
+            <summary>
+                The database context for the pizza manager.
+            </summary>
+        </member>
+        <member name="M:PizzaManager.Data.PizzaManagerContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+                Initializes a new instance of the <see cref="T:PizzaManager.Data.PizzaManagerContext" /> class.
+            </summary>
+            <param name="options">The options for this context.</param>
+        </member>
+        <member name="P:PizzaManager.Data.PizzaManagerContext.Pizzas">
+            <summary>
+                Gets the pizzas.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.PizzaManagerContext.Pates">
+            <summary>
+                Gets the pates.
+            </summary>
+        </member>
+        <member name="P:PizzaManager.Data.PizzaManagerContext.Ingredients">
+            <summary>
+                Gets the ingredients.
+            </summary>
+        </member>
+    </members>
+</doc>

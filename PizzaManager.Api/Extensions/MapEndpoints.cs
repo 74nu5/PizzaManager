@@ -5,8 +5,15 @@ using Microsoft.AspNetCore.Mvc;
 using PizzaManager.Business.Models;
 using PizzaManager.Business.Services;
 
+/// <summary>
+///     Static class to map the endpoints of the API to the services methods and DTOs to be used.
+/// </summary>
 public static class MapEndpoints
 {
+    /// <summary>
+    ///     Static extension method to map the pates endpoints to the services methods and DTOs to be used.
+    /// </summary>
+    /// <param name="app">The <see cref="IEndpointRouteBuilder" /> to map the endpoints.</param>
     public static void MapPatesEndpoints(this IEndpointRouteBuilder app)
     {
         var pateGroup = app.MapGroup("/pates");
@@ -15,28 +22,33 @@ public static class MapEndpoints
         pateGroup.MapGet("/{id:int}", (int id, [FromServices] PateService pateService) => pateService.Get(id));
         pateGroup.MapPost(
             "/",
-            (Pate pate, [FromServices] PateService pateService) =>
+            async (PateDto pate, [FromServices] PateService pateService, CancellationToken cancellationToken) =>
             {
-                pateService.Create(pate);
+                await pateService.CreateAsync(pate, cancellationToken);
                 return Results.Created($"/pates/{pate.Id}", pate);
             });
 
         pateGroup.MapPut(
             "/{id:int}",
-            (int id, Pate pate, [FromServices] PateService pateService) =>
+            async (int id, PateDto pate, [FromServices] PateService pateService, CancellationToken cancellationToken) =>
             {
-                pateService.Update(id, pate);
+                await pateService.UpdateAsync(id, pate, cancellationToken);
                 return Results.NoContent();
             });
 
         pateGroup.MapDelete(
             "/{id:int}",
-            (int id, [FromServices] PateService pateService) =>
+            async (int id, [FromServices] PateService pateService, CancellationToken cancellationToken) =>
             {
-                pateService.Delete(id);
+                await pateService.DeleteAsync(id, cancellationToken);
                 return Results.NoContent();
             });
     }
+
+    /// <summary>
+    ///     Static extension method to map the ingredients endpoints to the services methods and DTOs to be used.
+    /// </summary>
+    /// <param name="app">The <see cref="IEndpointRouteBuilder" /> to map the endpoints.</param>
     public static void MapIngredientsEndpoints(this IEndpointRouteBuilder app)
     {
         var ingredientGroup = app.MapGroup("/ingredients");
@@ -45,29 +57,33 @@ public static class MapEndpoints
         ingredientGroup.MapGet("/{id:int}", (int id, [FromServices] IngredientService ingredientService) => ingredientService.Get(id));
         ingredientGroup.MapPost(
             "/",
-            (Ingredient ingredient, [FromServices] IngredientService ingredientService) =>
+            async (IngredientDto ingredient, [FromServices] IngredientService ingredientService, CancellationToken cancellationToken) =>
             {
-                ingredientService.Create(ingredient);
+                await ingredientService.CreateAsync(ingredient, cancellationToken);
                 return Results.Created($"/ingredients/{ingredient.Id}", ingredient);
             });
 
         ingredientGroup.MapPut(
             "/{id:int}",
-            (int id, Ingredient ingredient, [FromServices] IngredientService ingredientService) =>
+            async (int id, IngredientDto ingredient, [FromServices] IngredientService ingredientService, CancellationToken cancellationToken) =>
             {
-                ingredientService.Update(id, ingredient);
+                await ingredientService.UpdateAsync(id, ingredient, cancellationToken);
                 return Results.NoContent();
             });
 
         ingredientGroup.MapDelete(
             "/{id:int}",
-            (int id, [FromServices] IngredientService ingredientService) =>
+            async (int id, [FromServices] IngredientService ingredientService, CancellationToken cancellationToken) =>
             {
-                ingredientService.Delete(id);
+                await ingredientService.DeleteAsync(id, cancellationToken);
                 return Results.NoContent();
             });
     }
 
+    /// <summary>
+    ///     Static extension method to map the pizzas endpoints to the services methods and DTOs to be used.
+    /// </summary>
+    /// <param name="app">The <see cref="IEndpointRouteBuilder" /> to map the endpoints.</param>
     public static void MapPizzasEndpoints(this IEndpointRouteBuilder app)
     {
         var pizzaGroup = app.MapGroup("/pizza");
@@ -76,9 +92,9 @@ public static class MapEndpoints
         pizzaGroup.MapGet("/{id:int}", (int id, [FromServices] PizzaService pizzaService) => pizzaService.Get(id));
         pizzaGroup.MapPost(
             "/",
-            (PizzaInput pizza, [FromServices] PizzaService pizzaService) =>
+            async (PizzaInput pizza, [FromServices] PizzaService pizzaService, CancellationToken cancellationToken) =>
             {
-                var (success, errorMessage) = pizzaService.Create(pizza);
+                var (success, errorMessage) = await pizzaService.CreateAsync(pizza, cancellationToken);
                 return (success, errorMessage) switch
                 {
                     (true, _) => Results.Created($"/pizza/{pizza.Id}", pizza),
@@ -88,17 +104,17 @@ public static class MapEndpoints
 
         pizzaGroup.MapPut(
             "/{id:int}",
-            (int id, PizzaInput pizza, [FromServices] PizzaService pizzaService) =>
+            async (int id, PizzaInput pizza, [FromServices] PizzaService pizzaService, CancellationToken cancellationToken) =>
             {
-                pizzaService.Update(id, pizza);
+                await pizzaService.UpdateAsync(id, pizza, cancellationToken);
                 return Results.NoContent();
             });
 
         pizzaGroup.MapDelete(
             "/{id:int}",
-            (int id, [FromServices] PizzaService pateService) =>
+            async (int id, [FromServices] PizzaService pateService, CancellationToken cancellationToken) =>
             {
-                pateService.Delete(id);
+                await pateService.DeleteAsync(id, cancellationToken);
                 return Results.NoContent();
             });
     }
